@@ -58,7 +58,7 @@ strong{font-weight:600}
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);
   backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--w);margin:0 auto;padding:0 32px;height:60px;
-  display:flex;align-items:center;gap:36px}
+  display:flex;align-items:center;gap:28px}
 /* 品牌标识：方框 + 三层数据线 + 穿透竖线 */
 .logo{display:flex;align-items:center;gap:11px;white-space:nowrap}
 .mark{width:30px;height:30px;flex:0 0 30px;color:var(--ink);display:block}
@@ -72,8 +72,10 @@ strong{font-weight:600}
 footer .logo .mark{color:var(--cream)}
 footer .logo .mark .pen{stroke:#7FB2E0}
 footer .brand-t i{color:#79828C}
-.nav-links{display:flex;gap:28px;margin-left:auto;font-size:14px;color:var(--t2)}
-.nav-links a{position:relative;padding:4px 0;transition:color .15s}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:14px;color:var(--t2);
+  min-width:0;white-space:nowrap}
+.nav-links a{position:relative;padding:4px 0;transition:color .15s;
+  flex:0 0 auto;white-space:nowrap}
 .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
   background:var(--steel);transition:right .2s ease}
 .nav-links a:hover{color:var(--t1)}
@@ -367,8 +369,25 @@ button.btn:disabled{opacity:.45;cursor:not-allowed}
   .col:first-child{border-top:0;padding-top:0}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
+/* 导航：中等宽度收紧间距并隐藏英文副标，避免菜单项被挤压折行 */
+@media (max-width:1280px){
+  .nav-in{gap:20px}
+  .nav-links{gap:17px;font-size:13.5px}
+  .brand-t i{display:none}
+}
+/* 导航：窄屏改为横向滚动，不隐藏菜单项（隐藏会让整站导航失效） */
+@media (max-width:1080px){
+  .nav-in{gap:14px}
+  .nav-links{gap:15px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .logo{flex:0 0 auto}
+}
 @media (max-width:680px){
-  .nav-links{display:none}
+  .nav-cta{display:none}
+  .nav-links{gap:14px;font-size:13px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
   .wrap,.nav-in,.hero-in,.statbar-in,.foot-grid,.foot-bottom-in{padding-left:20px;padding-right:20px}
   .row,.step{grid-template-columns:1fr;gap:10px}
   .hero h1{font-size:31px}
