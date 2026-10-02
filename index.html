@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>合规穿透 · 市场监管行业企业合规风险核查系统</title>
+<meta name="description" content="面向市场监管条线的企业合规风险穿透核查。依据 26 个官方公示渠道，完成工商、司法、行政处罚、资质与实际产出、关联关系的采集与交叉验证，输出带风险评级、依据可追溯的核查报告。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="brandbar"></div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html">
+      <svg class="mark" viewBox="0 0 30 30" aria-hidden="true">
+        <rect class="box" x="1.5" y="1.5" width="27" height="27"/>
+        <line class="bar" x1="7" y1="9.5" x2="23" y2="9.5"/>
+        <line class="bar" x1="7" y1="15" x2="23" y2="15"/>
+        <line class="bar" x1="7" y1="20.5" x2="23" y2="20.5"/>
+        <line class="pen" x1="15" y1="5.5" x2="15" y2="24.5"/>
+      </svg>
+      <span class="brand-t"><b>合规穿透</b><i>Compliance Penetration Review</i></span>
+    </a>
+    <div class="nav-links">
+      <a href="#problem">现状</a>
+      <a href="#sources">核查依据</a>
+      <a href="#architecture">架构</a>
+      <a href="#process">流程</a>
+      <a href="#person">人物穿透</a>
+      <a href="#deliver">交付物</a>
+      <a href="#checklist">签约清单</a>
+      <a href="#sample">报告样例</a>
+      <a href="#scenes">适用场景</a>
+      <a href="cases/index.html">案例</a>
+      <a href="#inquiry">在线登记</a>
+    </div>
+    <a class="nav-cta" href="cases/2026-10-02_粤深测检测.html">看一份真实报告</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="kicker">Market Supervision · Compliance Penetration Review</div>
+      <h1>把一个企业的底细，<br>查到<b>能签字</b>的程度。</h1>
+      <p class="lead">
+        面向市场监管条线的企业合规风险穿透核查。资质是不是真的在产出、抽查有没有反复不合格、
+        股权换过几手、关联方是谁——依据 26 个官方公示渠道逐条取证，
+        输出一份带风险评级、每条结论可回溯来源、能进采购档案的核查报告。
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="cases/2026-10-02_粤深测检测.html">查看真实案例报告</a>
+        <a class="btn btn-line" href="#sources">看核查依据清单</a>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-h">SERVICE SPECIFICATION · 市场监管行业</div>
+      <div class="metric"><span class="v">26</span><span class="k">官方公示渠道<br>纳入核查台账</span></div>
+      <div class="metric"><span class="v">203</span><span class="k">授权数据接口<br>原子工具数</span></div>
+      <div class="metric"><span class="v">35</span><span class="k">风险因子<br>单次扫描覆盖</span></div>
+      <div class="metric"><span class="v">158</span><span class="k">判定规则<br>通用+条线+人物</span></div>
+      <div class="metric"><span class="v">10</span><span class="k">标准流程步骤<br>顺序不可调换</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="statbar">
+  <div class="statbar-in">
+    <div class="stat"><span class="v">26</span><span class="k">官方公示渠道</span></div>
+    <div class="stat"><span class="v">158</span><span class="k">判定规则（三层）</span></div>
+    <div class="stat"><span class="v">49</span><span class="k">四行业专属判定项</span></div>
+    <div class="stat"><span class="v">2</span><span class="k">报告版本（内部 / 对外）</span></div>
+  </div>
+</div>
+
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">01 — 现状问题</span>
+      <h2>核查这件事，卡在三处</h2>
+      <p>不是查不到，而是查不全、判不准、写不快。三件事各占一段工时，还都得靠人。</p>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div class="n">01</div>
+        <div>
+          <h3>数据散在十几个官方渠道</h3>
+          <p>登记在国家企业信用信息公示系统，执行与失信在最高法执行信息公开网，行政处罚在信用中国，资质认定在认监委平台，抽查通告散在各级市场监管局门户。做一次完整核查要开七八个标签页逐个翻，还得人工比对。</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n">02</div>
+        <div>
+          <h3>有数据，不等于有判断</h3>
+          <p>查到一条被执行记录算不算高风险？抽查两次不合格要不要拦？参保 0 人说明什么？没有统一标准，结论全看经办人的经验，同一家公司两个人做可能给出相反结论。</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="n">03</div>
+        <div>
+          <h3>「有资质」查得出，「有没有在干活」查不出</h3>
+          <p>市场监管条线最典型的坑：一张资质认定证书在查询系统里状态是「有效」，但这家机构自取证起从未出具过一份盖章报告。证照核验全部通过，风险却已经形成——因为它不在任何结构化字段里。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sources">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">02 — 核查依据</span>
+      <h2>依据哪些官方渠道调查</h2>
+      <p>核查口径全部锚定政府部门公开公示渠道，共 5 大类 26 项。每一次调查按此台账逐项取证，
+        进入结论的关键事实在出具前回到原始公示渠道复核，不采信任何未经公示的私下信息。</p>
+    </div>
+
+    <div class="srcs">
+
+      <div class="srcgrp">
+        <div class="srcgrp-h">
+          <span class="g">A</span>
+          <div>
+            <h3>主体登记类</h3>
+            <p>确认「查的是不是这家」以及它的工商基线。主体确认错误是核查行业最常见的事故。</p>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>官方公示渠道</th><th>发布单位</th><th>核查用途</th><th style="text-align:right">接入</th></tr></thead>
+          <tbody>
+            <tr><td>国家企业信用信息公示系统</td><td class="u">国家市场监督管理总局</td><td>登记事项、股东与出资、变更记录、年报、经营异常、严重违法失信</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>全国组织机构统一社会信用代码数据服务中心</td><td class="u">国家标准委</td><td>统一社会信用代码唯一性校验，用于同名主体区分</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>各省（区、市）市场监督管理局门户</td><td class="u">省级市场监管局</td><td>辖区抽查检查结果、责令整改、地方通告</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="srcgrp">
+        <div class="srcgrp-h">
+          <span class="g">B</span>
+          <div>
+            <h3>司法与执行类</h3>
+            <p>判断它是否正在被追责、是否已失去履约能力。看的是执行状态，不是「有没有打过官司」。</p>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>官方公示渠道</th><th>发布单位</th><th>核查用途</th><th style="text-align:right">接入</th></tr></thead>
+          <tbody>
+            <tr><td>中国裁判文书网</td><td class="u">最高人民法院</td><td>裁判文书：纠纷类型、涉诉金额、判决结果</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>中国执行信息公开网</td><td class="u">最高人民法院</td><td>被执行人、失信被执行人名单、限制消费令</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>人民法院公告网</td><td class="u">最高人民法院</td><td>送达公告、开庭传票——公告送达往往意味着找不到人</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>全国企业破产重整案件信息网</td><td class="u">最高人民法院</td><td>破产清算与重整受理、管理人公告</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>中国庭审公开网</td><td class="u">最高人民法院</td><td>案件进程与庭审记录，用于诉讼真实性判断</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="srcgrp">
+        <div class="srcgrp-h">
+          <span class="g">C</span>
+          <div>
+            <h3>监管与执法类</h3>
+            <p>市场监管条线的核心取证面：有没有被罚、被抽查、被投诉，以及是哪家层级的机关查出来的。</p>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>官方公示渠道</th><th>发布单位</th><th>核查用途</th><th style="text-align:right">接入</th></tr></thead>
+          <tbody>
+            <tr><td>信用中国</td><td class="u">国家发展改革委</td><td>行政处罚、守信激励与失信惩戒、红黑名单</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>国家市场监督管理总局门户</td><td class="u">国家市场监督管理总局</td><td>国家级监督抽查、不合格产品通告、缺陷产品召回</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>严重违法失信企业名单</td><td class="u">国家市场监督管理总局</td><td>严重违法失信列入与移出记录</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>全国 12315 消费投诉信息公示</td><td class="u">国家市场监督管理总局</td><td>投诉举报量、调解结果、集中投诉领域</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>国家药品监督管理局数据查询</td><td class="u">国家药品监督管理局</td><td>药品、医疗器械、化妆品注册备案与处罚</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>中国海关企业进出口信用信息公示</td><td class="u">海关总署</td><td>进出口信用等级、海关行政处罚</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>重大税收违法失信主体名单</td><td class="u">国家税务总局</td><td>偷逃骗税、欠税公告、涉税违法</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="srcgrp">
+        <div class="srcgrp-h">
+          <span class="g">D</span>
+          <div>
+            <h3>资质与标准类</h3>
+            <p>不只看证书是否存在，还比对能力范围、有效期与实际产出。这一类是「持真证、零产出」问题的暴露面。</p>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>官方公示渠道</th><th>发布单位</th><th>核查用途</th><th style="text-align:right">接入</th></tr></thead>
+          <tbody>
+            <tr><td>全国认证认可信息公共服务平台</td><td class="u">国家认证认可监督管理委员会</td><td>CCC 强制性产品认证、管理体系认证证书有效性</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>检验检测机构资质认定（CMA）获证机构查询</td><td class="u">国家市场监督管理总局</td><td>资质认定证书、有效期、授权能力范围与参数</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>中国合格评定国家认可委员会（CNAS）认可查询</td><td class="u">中国合格评定国家认可委员会</td><td>实验室认可范围、国际互认资格</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>全国标准信息公共服务平台</td><td class="u">国家标准委</td><td>国家/行业/团体标准制修订参与情况、企业标准自我声明</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>全国工业产品生产许可证公示</td><td class="u">国家市场监督管理总局</td><td>工业产品生产许可范围与有效性</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="srcgrp">
+        <div class="srcgrp-h">
+          <span class="g">E</span>
+          <div>
+            <h3>知识产权与经营类</h3>
+            <p>判断它是否具备真实履约能力，以及股权层面是否存在被冻结、被出质、被司法处置的情况。</p>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>官方公示渠道</th><th>发布单位</th><th>核查用途</th><th style="text-align:right">接入</th></tr></thead>
+          <tbody>
+            <tr><td>中国商标网</td><td class="u">国家知识产权局</td><td>商标注册、异议、连续三年不使用撤销</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>专利检索及分析系统（PSS）</td><td class="u">国家知识产权局</td><td>专利授权、法律状态、年费维持情况</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>中国版权保护中心</td><td class="u">国家版权局</td><td>软件著作权与作品登记</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>中国政府采购网 / 全国公共资源交易平台</td><td class="u">财政部 / 国家发展改革委</td><td>中标记录、政府采购严重违法失信行为记录</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+            <tr><td>全国建筑市场监管公共服务平台</td><td class="u">住房城乡建设部</td><td>工程类企业资质与注册人员（涉及工程类核查时启用）</td><td style="text-align:right"><span class="way way-b">公示核验</span></td></tr>
+            <tr><td>国家企业信用信息公示系统 · 股权出质与冻结</td><td class="u">国家市场监督管理总局</td><td>股权出质、股权冻结、司法拍卖</td><td style="text-align:right"><span class="way way-a">已接入</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="srcfn">
+      <p><strong>关于数据获取方式。</strong>本系统通过上述渠道的公开公示信息开展核查。为提高采集效率，日常检索经已授权的商业数据服务（企查查开放平台，203 个原子数据接口）聚合完成；凡进入报告结论的关键事实，出具前一律回到上表对应的原始公示渠道逐条复核。</p>
+      <p><strong>关于核查边界。</strong>不接触任何非公开数据，不采信未经公示的私下信息，不提供任何形式的个人隐私调查。涉自然人的内容仅限于企业公示的法定代表人、董监高任职与股权关系。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="architecture">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">03 — 能力架构</span>
+      <h2>三层能力，只自建该自建的部分</h2>
+      <p>数据用买的，方法论自己攒。链条上真正稀缺的不是数据本身，而是「查什么、怎么判、出什么报告」。</p>
+    </div>
+    <div class="cols3">
+      <div class="col">
+        <span class="lab">数据层 · 采购</span>
+        <h3>按官方渠道台账取证</h3>
+        <p>按上一节 5 类 26 项渠道建立核查台账，逐项留痕。渠道不可用时如实标注，不静默跳过。</p>
+        <ul>
+          <li>企查查开放平台：工商 / 司法 / 知产 / 经营</li>
+          <li>认监委、标准委、药监局：资质与标准核验</li>
+          <li>各级市场监管局门户：抽查与通告</li>
+          <li>最高法执行与裁判公开渠道</li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="lab">编排层 · 自建</span>
+        <h3>十步标准流程</h3>
+        <p>把「做一次核查」固化成固定动作序列。任何人执行、任何时间执行，输出结构一致、结论可复现。</p>
+        <ul>
+          <li>主体确认 → 基线核查 → 风险扫描</li>
+          <li>能力评估 → 行业加查 → 交叉验证</li>
+          <li>关联关系 → 评级结论 → 二审复核</li>
+          <li>市场监管条线挂载 10 项专属判定规则</li>
+          <li>12 条执法条线按暴露面挂载（93 项）</li>
+          <li>人物穿透四步法（17 项）可加挂</li>
+        </ul>
+      </div>
+      <div class="col">
+        <span class="lab">输出层 · 自建</span>
+        <h3>可交付的成果</h3>
+        <p>不是聊天框里的一段话，而是一份结构完整、评级可解释、来源可追溯的正式报告。</p>
+        <ul>
+          <li>风险评级：低 / 中 / 高 / 不适格</li>
+          <li>Word 双版本：内部尽调版 / 对外战略版</li>
+          <li>签约前核查清单（可打印勾选签字）</li>
+          <li>三态标注：有记录 / 确认无 / 未获取</li>
+          <li>证据编号留痕，每条结论可回溯来源</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">04 — 工作流程</span>
+      <h2>十步跑完一次核查</h2>
+      <p>顺序不可调换。前一步的输出是后一步的输入，跳过任何一步都会降低结论的可辩护性。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div><h4>主体确认</h4><p>给一个企业全称或统一社会信用代码。存在同名或多主体命中时用统一社会信用代码做唯一性校验，避免查错对象。</p></div></div>
+      <div class="step"><div class="n">02</div><div><h4>基线核查</h4><p>登记状态、注册资本与实缴、成立时间、法定代表人、股东与实际控制人、经营范围、参保情况。</p></div></div>
+      <div class="step"><div class="n">03</div><div><h4>风险扫描</h4><p>一次扫描 35 项风险因子，先分诊再下钻：只对「有记录」的因子拉明细，避免无效调用。</p></div></div>
+      <div class="step"><div class="n">04</div><div><h4>能力评估</h4><p>资质证书、知识产权、招投标与中标记录、分支机构与对外投资，判断它是否真的具备履约能力。</p></div></div>
+      <div class="step"><div class="n">05</div><div><h4>行业加查与条线挂载</h4><p>市场监管条线专属：抽查检查结果、生产许可、强制性产品认证、CMA 资质与实际产出的比对、消费投诉。同时按主体的监管暴露面挂载执法条线（行政处罚、登记信用为必挂，另有网络交易、广告、反垄断、反不正当竞争、价格、消保、质量认证、食品安全、特种设备、知产共 12 条线）。</p></div></div>
+      <div class="step"><div class="n">06</div><div><h4>交叉验证</h4><p>同一事实多源比对，冲突时采信官方源，并把冲突本身写进报告而不是悄悄抹平。</p></div></div>
+      <div class="step"><div class="n">07</div><div><h4>关联关系</h4><p>法人、股东、对外投资构成的关联网络，以及工商变更轨迹——换壳、团伙、异常变更集中爆发都在这里暴露。</p></div></div>
+      <div class="step"><div class="n">08</div><div><h4>评级结论</h4><p>按判定规则计分，输出风险等级与准入建议，并给出触发了哪几条规则、依据哪条数据。</p></div></div>
+      <div class="step"><div class="n">09</div><div><h4>二审复核</h4><p>出具前自查：主体是否查错、有无把「未获取」写成「无记录」、推断有无伪装成事实。</p></div></div>
+      <div class="step"><div class="n">10</div><div><h4>报告生成</h4><p>输出 Word 双版本（内部尽调版 / 对外战略版），含封面、页眉、页码与证据清单，可直接打印归档与签字；需要网页演示时另出 HTML。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="person">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">05 — 人物穿透</span>
+      <h2>风险不都写在公司名下</h2>
+      <p>企业维度回答「这家公司行不行」，人物维度回答「<b>是谁在做这家公司、他之前做过什么</b>」。
+        相当一部分风险根本不出现在目标主体的报表里，只出现在人物的任职轨迹和时间的先后顺序里。</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div><h4>身份穿透</h4>
+        <p>把「名字」换成「角色」：股东、法定代表人、董事、监事、经理、实际控制人、受益所有人，
+        <b>以及已经退出的历史任职与持股</b>——退出时点往往比现任职务更能说明问题。</p></div></div>
+      <div class="step"><div class="n">02</div><div><h4>时间线重建</h4>
+        <p>把义务形成（判决、被执行立案、处罚决定）与身份资产变动（股权转让、减资、延长出资期限、新设主体）
+        排到同一条轴上。<b>先有义务、后有转移</b>——这个先后关系本身就是结论。</p></div></div>
+      <div class="step"><div class="n">03</div><div><h4>关联网络</h4>
+        <p>只穿透一层：关联主体的状态、同址注册、交叉任职、同业关联、关联主体风险。
+        定位不到具体关联方时按计数计分并标注「未定位」，<b>不推定本人受限</b>。</p></div></div>
+      <div class="step"><div class="n">04</div><div><h4>出资与能力</h4>
+        <p>认缴不等于实缴。看认缴与实缴的差额、出资期限是否延长、延长发生在何时、
+        非货币出资是否完成评估过户、股权是否出质给非金融机构。</p></div></div>
+    </div>
+    <div class="note" style="margin-top:36px">
+      <h3>六个时序模式（命中即在报告中单独成段，附完整时间线）</h3>
+      <ul>
+        <li><b>P-01</b> 义务形成后转让股权或退出任职</li>
+        <li><b>P-02</b> 义务形成后延长认缴出资期限</li>
+        <li><b>P-03</b> 义务形成后大额减资</li>
+        <li><b>P-04</b> 义务形成后新设同类业务主体</li>
+        <li><b>P-05</b> 关联主体在义务形成后注销或吊销，业务与人员平移</li>
+        <li><b>P-06</b> 同一批人在 3 家以上主体间轮换任职且周期性出问题</li>
+      </ul>
+      <p style="margin-top:14px;color:var(--t2);font-size:14px">
+        判定必须四要件齐全：义务时点可确认、变动时点可确认、变动在义务之后、两者存在合理关联。
+        <b>缺任一要件不计分</b>，只列为观察项并写明缺什么——这条不能靠印象判。</p>
+    </div>
+    <div class="note" style="margin-top:24px;border-left-color:var(--hi)">
+      <h3>合规边界</h3>
+      <ul>
+        <li>只查公开工商登记、司法公开文书、官方公示中的任职与投资关系</li>
+        <li>不查个人隐私：住址、身份号码、家庭成员、通讯方式、行踪、非公开财产明细</li>
+        <li><b>不作人品定性</b>，只陈述可核查的公开记录及其法律后果</li>
+        <li>同一性未确认的同名自然人标注「未确认同一性」，不并入统计</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="deliver">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">06 — 交付物</span>
+      <h2>同一套事实，两个版本</h2>
+      <p>核查出来的事实只有一套，但看报告的人不同。对内要能诊断问题，对外要能推进合作——
+        用同一份报告应付两种场合，是尽调工作最常见的失误。</p>
+    </div>
+    <div class="dual">
+      <div class="dual-c">
+        <span class="lab">版本 A · 对内</span>
+        <h3>内部尽调版</h3>
+        <p class="sub">给决策人看，不修饰、不回避。用于内部风险评估与决策留痕。</p>
+        <ul>
+          <li>真实经营状况与产业环境数据</li>
+          <li>风险、缺陷、问题诊断，可含负面结论</li>
+          <li>关联方穿透、股权变更轨迹、责任人身份</li>
+          <li>触发的判定规则编号与计分明细</li>
+          <li>证据编号、来源、取证时间留痕</li>
+        </ul>
+      </div>
+      <div class="dual-c">
+        <span class="lab">版本 B · 对外</span>
+        <h3>对外战略版</h3>
+        <p class="sub">给合作方看，只用已核实数据，建设性表述。用于商务推进。</p>
+        <ul>
+          <li>资源赋能方案与合作路径</li>
+          <li>落地建议、成功案例参照</li>
+          <li>用「挑战 / 机遇」替代「问题」表述</li>
+          <li>不写入未公开的推断性内容</li>
+          <li>不引用内部尽调版的风险计分明细</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="checklist">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">07 — 签约前核查清单</span>
+      <h2>报告告诉你能不能合作，清单告诉你该怎么签</h2>
+      <p>背调做完、合同签下之前，还有一步经常被跳过：把背调结论翻译成合同条款。
+        这一步不做，前面所有工作只停留在「知道」，落不到「约束」。</p>
+    </div>
+    <div class="rows">
+      <div class="row"><div class="n">01</div><div><h3>先决条件</h3>
+        <p>签约主体与背调主体是同一家（信用代码逐位核对）、未命中一票否决项、高风险项已走完担保 / 现场核查 / 更换主体三选一。</p></div></div>
+      <div class="row"><div class="n">02</div><div><h3>主体与授权</h3>
+        <p>签约方必须是目标主体本身而非代理商或个人；授权书原件入附件；收款账户名称与合同主体一致，
+        <b>不接受个人账户收款</b>。</p></div></div>
+      <div class="row"><div class="n">03</div><div><h3>标的与价格真实性</h3>
+        <p>标的清单逐项写明型号规格并可在公开渠道比价；定制特供款需书面确认；先小批量试单验货再谈批量。</p></div></div>
+      <div class="row"><div class="n">04</div><div><h3>费用与结算</h3>
+        <p>费用构成逐项列明、版本与有效期写死、排查隐性费用、续费涨价机制需另行确认、违约责任双向对等。</p></div></div>
+      <div class="row"><div class="n">05</div><div><h3>退费与退出</h3>
+        <p>退费条件、比例、时限写进合同；「终身版」在主体注销或停服时如何处理；数据交接与争议解决方式。</p></div></div>
+      <div class="row"><div class="n">06</div><div><h3>承诺书面化</h3>
+        <p>口头承诺要么写入合同并附考核口径，要么删除。出现「零成本、稳赚、躺赚、包效果、今天截止」即视为红线信号。</p></div></div>
+      <div class="row"><div class="n">07</div><div><h3>服务交付与 SLA</h3>
+        <p>交付物逐项可验收、响应与解决时效分档写明、数据归属与可导出性、终止后数据返还与删除。</p></div></div>
+      <div class="row"><div class="n">08</div><div><h3>背调结论 → 合同条款映射</h3>
+        <p>命中什么风险，就往合同里加什么条款：认缴未实缴 → 股东连带责任担保；被执行记录 → 分期付款 + 验收后付尾款；
+        住所失联 → 约定有效送达地址；资质临近到期 → 续期义务 + 未续期解约权；时序模式命中 → 实控人个人连带担保。</p></div></div>
+    </div>
+    <div class="note" style="margin-top:36px">
+      <h3>为什么清单比报告更适合做成标准件</h3>
+      <ul>
+        <li>报告是一次性的，清单是<b>每次签约都能用</b>的——这是年度服务包里最容易被感知价值的交付物</li>
+        <li>清单以 Word 交付，可直接打印、勾选、签字，进入采购档案</li>
+        <li>清单把「核查结论」变成「可执行的动作」，客户不需要自己翻译</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sample">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">08 — 报告样例</span>
+      <h2>输出长什么样</h2>
+      <p>以下为一份真实案例报告的结论部分，对象为检验检测机构。数据来自上表所列官方公示渠道，每条发现均可回溯到原始来源。</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-h">
+        <span>BG-20261002-001 · 检验检测机构准入专项核查</span>
+        <span>出具日期 2026-10-02</span>
+      </div>
+      <div class="ledger-b">
+        <div class="verdict">
+          <div>
+            <div class="verdict-l">RISK LEVEL</div>
+            <div class="verdict-v">高风险</div>
+          </div>
+          <div class="verdict-m">
+            风险总分 23.0<br>
+            触发规则 9 条<br>
+            建议：不建议准入
+          </div>
+        </div>
+        <ul class="findings">
+          <li><span class="i">01</span><span>持有有效 CMA 资质认定证书，但自取证起 8 个月内<strong>未出具过一份加盖 CMA 章的检验检测报告</strong>，监管部门已就此公开发布风险提示</span></li>
+          <li><span class="i">02</span><span>2026-09-01 被列入经营异常，原因：<strong>通过登记的住所或者经营场所无法联系</strong></span></li>
+          <li><span class="i">03</span><span>2025-08-14 单日完成 <strong>7 项工商变更</strong>（名称 / 注册资本 / 投资人 / 企业类型 / 经营范围 / 联络员 / 章程），企业前身为纺织品公司</span></li>
+          <li><span class="i">04</span><span>通信地址标注「集群注册」；<strong>社保参保 0 人</strong></span></li>
+          <li><span class="i">05</span><span>2025-09-18 经营范围由 15 项收缩至 3 项，两个月后取得 CMA 资质</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-row" style="margin-top:28px">
+      <a class="btn btn-dark" href="cases/2026-10-02_粤深测检测.html">阅读完整报告</a>
+      <a class="btn btn-outline" href="cases/index.html">查看全部案例</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="scenes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">09 — 适用场景</span>
+      <h2>市场监管条线下的典型用法</h2>
+      <p>同一个主体在不同场景下的核查重点不同。登记时选择场景，系统据此调整核查权重与报告结构。</p>
+    </div>
+    <table class="tbl">
+      <thead>
+        <tr><th>场景</th><th>核查重点</th><th>交付形态</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>供应商准入</td><td>资质有效性、实际产出、抽查记录、行政处罚、履约能力</td><td>内部尽调版</td></tr>
+        <tr><td>投标前核验</td><td>投标资格条件、近年业绩真实性、失信与处罚、关联方围标迹象</td><td>内部尽调版</td></tr>
+        <tr><td>合作方 / 股东穿透</td><td>股权结构、实际控制人、变更轨迹、关联网络、出资实缴情况</td><td>内部尽调版</td></tr>
+        <tr><td>签约前核查清单</td><td>逐项对照签约前置条件，输出可勾选的核查清单与缺项提示</td><td>核查清单 + 报告</td></tr>
+        <tr><td>会员准入</td><td>主体真实性、行业资质、舆情与投诉、经营稳定性</td><td>内部尽调版</td></tr>
+        <tr><td>年度监测</td><td>对已准入主体定期复扫，输出变动项与新增风险</td><td>监测简报</td></tr>
+        <tr><td>商务推进</td><td>在已核实事实基础上输出合作路径与资源匹配建议</td><td>对外战略版</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="cred">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">10 — 编制单位</span>
+      <h2>谁在为结论负责</h2>
+      <p>核查的价值不在数据量，而在判定口径是否站得住。编制团队按八个职能角色分工，
+        每个角色对应一类核查能力与一种可调用的专业资源。</p>
+    </div>
+    <div class="cred">
+      <div class="cred-h">
+        <span class="l">PREPARED BY · 编制单位</span>
+        <span class="r">顾问团队 · 八大工作角色矩阵</span>
+      </div>
+      <div class="cred-grid">
+        <div class="cred-i"><span class="n">ROLE 01</span><h4>监管政策口径</h4><p>市场监管总局发展研究中心课题组研究路径，确保判定口径与现行监管规则一致。</p></div>
+        <div class="cred-i"><span class="n">ROLE 02</span><h4>执法与合规标准</h4><p>行政学院课程体系与执法实务，界定「一般问题」与「实质缺陷」的分档边界。</p></div>
+        <div class="cred-i"><span class="n">ROLE 03</span><h4>风险扫描与监管科技</h4><p>网络市场监测、风险预警与数据取证技术，负责批量采集与异常信号识别。</p></div>
+        <div class="cred-i"><span class="n">ROLE 04</span><h4>司法与执行分析</h4><p>诉讼、执行、失信与限高记录解读，判断责任是否已实质落到主体身上。</p></div>
+        <div class="cred-i"><span class="n">ROLE 05</span><h4>行业资质核验</h4><p>检验检测、认证认可、生产许可等资质与实际产出的比对核验。</p></div>
+        <div class="cred-i"><span class="n">ROLE 06</span><h4>消费投诉与舆情</h4><p>12315 投诉、网络舆情与声誉风险监测，识别集中投诉与苗头性问题。</p></div>
+        <div class="cred-i"><span class="n">ROLE 07</span><h4>数据合规与个人信息</h4><p>数据采集边界、个人信息保护与合规留痕，确保取证方式本身可审计。</p></div>
+        <div class="cred-i"><span class="n">ROLE 08</span><h4>报告编审与质控</h4><p>二审复核、证据链编号、三态标注规范，对出具的每一份报告负最终责任。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="compliance">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">11 — 合规边界</span>
+      <h2>取证边界与声明</h2>
+    </div>
+    <div class="note">
+      <h3>本系统的取证边界</h3>
+      <ul>
+        <li>只核查企业主体；涉自然人的内容限于企业公示的法定代表人、董监高任职与股权关系</li>
+        <li>数据来源限于官方公示渠道与已授权的商业数据接口，不接触任何非公开数据</li>
+        <li>不采信未经公示的私下信息，不提供任何形式的个人隐私调查</li>
+        <li>不做数据留存转售，不为第三方提供原始数据包</li>
+        <li>报告中所有结论均标注来源与查询时间，可回溯核验</li>
+        <li>数据缺失一律如实标注为「未获取」，<strong>绝不写成「无记录」</strong>——二者法律含义完全不同</li>
+        <li>推断性内容单独成段并显式标注，不与事实混排</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="inquiry">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-idx">12 — 在线登记</span>
+      <h2>把一个主体交给我们查</h2>
+      <p>填写待核查对象与联系方式。系统会先针对这个主体和场景，生成一份建议重点核查的维度清单；
+        提交后由人工确认核查范围与交付时间。联系方式仅用于本次受理，不对任何未登录访客开放读取。</p>
+    </div>
+
+    <div class="iform">
+      <form id="inq-form" novalidate>
+        <div class="fgrid">
+          <div class="fld fld-full">
+            <label for="f-company">待核查企业名称 <span class="req">*</span></label>
+            <input id="f-company" type="text" maxlength="100" autocomplete="off"
+                   placeholder="请填写营业执照上的企业全称">
+          </div>
+          <div class="fld">
+            <label for="f-industry">所属行业（市场监管条线）</label>
+            <select id="f-industry">
+              <option value="检验检测">检验检测</option>
+              <option value="食品生产经营">食品生产经营</option>
+              <option value="化妆品">化妆品</option>
+              <option value="医疗器械">医疗器械</option>
+              <option value="工业产品与消费品">工业产品与消费品</option>
+              <option value="广告与电商">广告与电商</option>
+              <option value="网络交易平台">网络交易平台</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="f-scene">核查场景</label>
+            <select id="f-scene">
+              <option value="供应商准入">供应商准入</option>
+              <option value="投标前核验">投标前核验</option>
+              <option value="合作方穿透">合作方 / 股东穿透</option>
+              <option value="签约前核查清单">签约前核查清单</option>
+              <option value="会员准入">会员准入</option>
+              <option value="年度监测">年度监测</option>
+              <option value="商务推进">商务推进</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="f-contact">联系人 <span class="req">*</span></label>
+            <input id="f-contact" type="text" maxlength="40" autocomplete="name" placeholder="姓名">
+          </div>
+          <div class="fld">
+            <label for="f-contactno">联系方式 <span class="req">*</span></label>
+            <input id="f-contactno" type="text" maxlength="60" autocomplete="off" placeholder="手机号或邮箱">
+          </div>
+          <div class="fld fld-full">
+            <label for="f-note">补充说明</label>
+            <textarea id="f-note" rows="3" maxlength="500"
+                      placeholder="例如：需重点核实资质真实性、是否存在行政处罚、是否有关联方风险"></textarea>
+          </div>
+        </div>
+
+        <div class="fmsg" id="f-msg" role="status" aria-live="polite"></div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-outline" id="btn-precheck">生成智能预检方案</button>
+          <button type="submit" class="btn btn-dark" id="btn-submit">提交登记</button>
+        </div>
+
+        <p class="fhint">预检只使用企业名称、所属行业、核查场景三项，联系方式与联系人不会发送给模型。</p>
+      </form>
+
+      <div class="pcp">
+        <div class="pcp-h">PRE-CHECK · 智能预检方案</div>
+        <div class="pcp-empty" id="pcp-empty">填写左侧企业名称后点击「生成智能预检方案」，这里会列出本次建议重点核查的维度。预检只给核查建议，不对该企业下任何结论。</div>
+        <pre class="pcp-out" id="pcp-out" hidden></pre>
+        <div class="pcp-meta" id="pcp-meta" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a class="logo" href="index.html">
+        <svg class="mark" viewBox="0 0 30 30" aria-hidden="true">
+          <rect class="box" x="1.5" y="1.5" width="27" height="27"/>
+          <line class="bar" x1="7" y1="9.5" x2="23" y2="9.5"/>
+          <line class="bar" x1="7" y1="15" x2="23" y2="15"/>
+          <line class="bar" x1="7" y1="20.5" x2="23" y2="20.5"/>
+          <line class="pen" x1="15" y1="5.5" x2="15" y2="24.5"/>
+        </svg>
+        <span class="brand-t"><b>合规穿透</b><i>Compliance Penetration Review</i></span>
+      </a>
+      <p class="foot-about">市场监管行业企业合规风险核查系统。依据 26 个官方公示渠道取证，输出可进采购档案的结构化风险报告。编制单位：顾问团队 · 八大工作角色矩阵。</p>
+    </div>
+    <div>
+      <h4>PRODUCT</h4>
+      <ul>
+        <li><a href="#sources">核查依据</a></li>
+        <li><a href="#architecture">能力架构</a></li>
+        <li><a href="#process">工作流程</a></li>
+        <li><a href="#deliver">交付物</a></li>
+        <li><a href="#compliance">合规声明</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>INDUSTRY SITES</h4>
+      <ul>
+        <li><a href="industries/market.html">市场监管（本站）</a></li>
+        <li><a href="industries/culture-tourism.html">文旅 · 独立站</a></li>
+        <li><a href="industries/medical.html">医疗 · 独立站</a></li>
+        <li><a href="industries/audit.html">审计 · 独立站</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CASES</h4>
+      <ul>
+        <li><a href="cases/index.html">案例库</a></li>
+        <li><a href="cases/2026-10-02_粤深测检测.html">检验检测机构（高风险）</a></li>
+        <li><a href="cases/2026-10-02_华测检测.html">上市检测集团（中风险）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="foot-bottom-in">
+      <span>合规穿透 · 市场监管行业企业合规风险核查系统</span>
+      <span>输出内容基于官方公示渠道与已授权数据服务整理，不构成投资、法律或商业决策的唯一依据</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script src="assets/cloud.js"></script>
+<script src="assets/inquiry.js"></script>
+
+</body>
+</html>
