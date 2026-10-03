@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>监管实务需求征集 · 合规穿透</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  :root{
+    --ink:#0A0E12;--ink2:#131A22;--ink3:#1E2831;--steel:#1D5F9E;--steel-deep:#0E3A66;
+    --steel-soft:#EAF1F8;--paper:#FFFFFF;--paper2:#F7F6F3;--paper3:#EFEDE8;--line:#DED9D0;
+    --t1:#12161A;--t2:#5A626C;--t3:#8C949D;--hi:#B3261E;--lo:#2E6B4F;--mid:#9A5B00;
+    --r:2px;--w:900px;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper2);color:var(--t1);font-family:var(--sans);
+       font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  /* 顶栏 */
+  .top{background:var(--ink);border-bottom:1px solid var(--line-d,#263039)}
+  .top-in{max-width:var(--w);margin:0 auto;padding:0 24px;height:58px;
+          display:flex;align-items:center;gap:16px;white-space:nowrap}
+  .top-in .b{font-size:16px;font-weight:700;color:#fff;letter-spacing:.02em}
+  .top-in .s{font-size:12px;color:#8C949D;letter-spacing:.14em}
+  .top-in .r{margin-left:auto;font-size:13px;color:#9FB0C2}
+  .top-in .r:hover{color:#fff}
+
+  .wrap{max-width:var(--w);margin:0 auto;padding:40px 24px 72px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:var(--steel);font-weight:600}
+  h1{font-size:30px;line-height:1.3;margin:10px 0 12px;letter-spacing:-.01em}
+  .lede{color:var(--t2);max-width:660px;margin:0 0 28px}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+  .card + .card{margin-top:20px}
+
+  .notice{background:var(--steel-soft);border:1px solid #C8DBEF;border-left:3px solid var(--steel);
+          border-radius:var(--r);padding:16px 18px;margin-bottom:26px}
+  .notice h3{margin:0 0 8px;font-size:14px;color:var(--steel-deep);letter-spacing:.02em}
+  .notice ul{margin:0;padding-left:18px}
+  .notice li{font-size:13.5px;color:#33475C;line-height:1.75}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .f{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+  .f.full{grid-column:1 / -1}
+  label{font-size:13px;font-weight:600;color:var(--t1)}
+  label .opt{font-weight:400;color:var(--t3)}
+  input,select,textarea{font-family:inherit;font-size:14px;color:var(--t1);background:var(--paper);
+    border:1px solid var(--line);border-radius:var(--r);padding:9px 11px;width:100%;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--steel);box-shadow:0 0 0 2px rgba(29,95,158,.10)}
+  textarea{min-height:96px;resize:vertical;line-height:1.7}
+  .hint{font-size:12px;color:var(--t3)}
+
+  .btn{display:inline-block;background:var(--steel);color:#fff;border:0;border-radius:var(--r);
+       padding:12px 26px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--steel-deep)}
+  .btn:disabled{background:#9AA3AD;cursor:not-allowed}
+  .row-end{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+  .msg{font-size:13.5px}
+  .msg.ok{color:var(--lo)} .msg.err{color:var(--hi)} .msg.info{color:var(--t2)}
+
+  .done{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--lo);
+        border-radius:var(--r);padding:26px}
+  .done .no{font-family:var(--mono,ui-monospace),monospace;font-size:20px;color:var(--steel-deep);
+            letter-spacing:.06em;margin:6px 0 14px}
+
+  .steps{margin:0;padding:0;list-style:none}
+  .steps li{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .steps li:last-child{border-bottom:0}
+  .steps i{font-style:normal;color:var(--steel);font-weight:700;font-family:var(--mono,ui-monospace),monospace}
+  .steps span{color:var(--t2)}
+
+  footer.foot{background:var(--ink);color:#8C949D;padding:26px 24px;font-size:12.5px}
+  .foot-in{max-width:var(--w);margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:680px){
+    h1{font-size:24px} .grid{grid-template-columns:1fr} .wrap{padding:28px 18px 56px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <span class="b">合规穿透</span>
+    <span class="s">COMPLIANCE PENETRATION REVIEW</span>
+    <a class="r" href="index.html">返回首页 →</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kicker">监管实务 · 共创征集</div>
+  <h1>你手上最耗时的一步，交给我们做工具</h1>
+  <p class="lede">
+    我们已把市场监管 12 条执法条线拆成 93 项判定规则，并配齐了 26 项官方公示渠道的取数路径。
+    现在需要知道：一线真正卡住的是哪一步。你提场景，我们出可用的东西——清单、报告或小工具，
+    做完就发回给你试用，不好用就改。
+  </p>
+
+  <div class="notice">
+    <h3>提交前请读（边界声明）</h3>
+    <ul>
+      <li>只收集<strong>工作方法与流程层面的需求</strong>；请勿填写具体个案、当事人信息、企业内部数据、涉密信息。</li>
+      <li>我们仅使用<strong>公开公示信息与已授权数据源</strong>，不使用、也不索取任何非公开信息。</li>
+      <li>本页不提供、也不参与任何可能影响公正执行公务的安排。提交内容仅用于产品共建与统计。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <form id="f" autocomplete="off">
+      <div class="grid">
+        <div class="f">
+          <label>您的称呼 <span class="opt">（选填，可匿名）</span></label>
+          <input id="name" maxlength="20" placeholder="如：王老师 / 匿名">
+        </div>
+        <div class="f">
+          <label>联系方式 <span class="opt">（选填，用于回发成果）</span></label>
+          <input id="contactNo" maxlength="40" placeholder="手机号或微信号">
+        </div>
+
+        <div class="f">
+          <label>所在条线</label>
+          <select id="line">
+            <option value="">请选择</option>
+            <option>行政处罚</option>
+            <option>登记注册与信用监管</option>
+            <option>网络交易与直播电商</option>
+            <option>广告合规</option>
+            <option>反垄断</option>
+            <option>反不正当竞争</option>
+            <option>价格监管</option>
+            <option>消费者权益保护</option>
+            <option>产品质量与认证</option>
+            <option>食品安全</option>
+            <option>特种设备与计量</option>
+            <option>知识产权侵权</option>
+            <option>其他 / 综合</option>
+          </select>
+        </div>
+        <div class="f">
+          <label>最耗时的场景</label>
+          <input id="scene" maxlength="60" placeholder="如：投诉举报核查、广告预审、抽检后处置">
+        </div>
+
+        <div class="f full">
+          <label>现在怎么做，卡在哪一步</label>
+          <textarea id="note" maxlength="500"
+            placeholder="例：要核实一家企业是不是真在经营，得逐个网站翻，一个主体半小时，还不敢写进结论。"></textarea>
+          <span class="hint">写流程与方法，不要写具体企业名称与个案信息。</span>
+        </div>
+
+        <div class="f">
+          <label>希望我们先交付什么</label>
+          <select id="expect">
+            <option value="">请选择</option>
+            <option>一份可直接用的核查清单（可打印勾选）</option>
+            <option>一份真实案例报告（看结论怎么来的）</option>
+            <option>一个能自己试的小工具</option>
+            <option>一次线上讲解（30 分钟）</option>
+          </select>
+        </div>
+        <div class="f">
+          <label>是否愿意参与内测并反馈</label>
+          <select id="beta">
+            <option value="">请选择</option>
+            <option>愿意，可以试用并提意见</option>
+            <option>先看成果再定</option>
+            <option>暂不参与</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-end">
+        <button class="btn" id="submit" type="submit">提交需求</button>
+        <span class="msg info" id="msg"></span>
+      </div>
+    </form>
+  </div>
+
+  <div class="card" id="done" style="display:none">
+    <div class="done">
+      <div style="font-size:14px;color:var(--t2)">需求已受理</div>
+      <div class="no" id="doneNo">DEM-000000</div>
+      <p style="margin:0 0 10px">我们会在 <strong>72 小时内</strong>给出这个场景的第一个可用版本，并发回给你试用。</p>
+      <p style="margin:0;color:var(--t2);font-size:14px">反馈只问三句：哪条不准、哪条多余、还缺什么。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:17px;margin:0 0 14px">接下来会发生什么</h2>
+    <ul class="steps">
+      <li><i>01</i><span>需求进池，按条线归类，同场景合并处理。</span></li>
+      <li><i>02</i><span>72 小时内出第一个可用版本（清单 / 报告 / 小工具）。</span></li>
+      <li><i>03</i><span>发回试用，收集反馈：哪条不准、哪条多余、还缺什么。</span></li>
+      <li><i>04</i><span>改完的第二版并入规则库，后续同类场景自动沿用。</span></li>
+    </ul>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span>合规穿透 · 监管实务需求征集</span>
+    <span>仅收集工作方法层面需求，不涉及个案信息与非公开数据</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script src="assets/cloud.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function setMsg(t, k) { var m = $("msg"); m.textContent = t || ""; m.className = "msg " + (k || "info"); }
+
+  function makeDemTicket() {
+    var s = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+    return "DEM-" + s.replace(/-/g, "").slice(0, 8).toUpperCase();
+  }
+
+  $("f").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var line = $("line").value.trim();
+    var scene = clean($("scene").value, 60);
+    var note = clean($("note").value, 500);
+    var expect = $("expect").value.trim();
+    var beta = $("beta").value.trim();
+
+    if (!line) { setMsg("请先选择所在条线。", "err"); return; }
+    if (!scene) { setMsg("请填写最耗时的场景，一句话就行。", "err"); return; }
+    if (!note) { setMsg("请简单写一下现在怎么做、卡在哪一步。", "err"); return; }
+
+    if (!initCloud()) { setMsg("数据服务未就绪，请稍后重试或直接联系我们。", "err"); return; }
+
+    $("submit").disabled = true;
+    setMsg("正在提交…", "info");
+
+    var ticket = makeDemTicket();
+    var row = {
+      company: "监管实务需求征集",
+      industry: line,
+      scene: scene,
+      contact: clean($("name").value, 20) || "匿名",
+      contactNo: clean($("contactNo").value, 40),
+      note: "[需求征集] " + note + " ｜ 期望交付：" + (expect || "未填") + " ｜ 内测：" + (beta || "未填"),
+      ticket: ticket
+    };
+
+    var res = await submitInquiry(row);
+    $("submit").disabled = false;
+
+    if (res && res.error) { setMsg(dbErrorText(res.error), "err"); return; }
+
+    $("doneNo").textContent = ticket;
+    $("done").style.display = "block";
+    $("submit").closest(".row-end").style.display = "none";
+    setMsg("");
+    $("done").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+})();
+</script>
+
+</body>
+</html>
